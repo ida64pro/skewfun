@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skew</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="background-music" preload="auto" loop>
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="background-musicc" preload="auto" loop>
+        Your browser does not support the audio element.
+    </audio>
+    <button id="play-button" class="play-button">
+        Play Music
+    </button>
+    <script>
+        // Установите путь к вашему аудиофайлу
+        const audios = [
+                'music/m1.mp3',
+                'music/m2.mp3',
+                'music/m3.mp3',
+                'music/m4.mp3',
+                'music/m5.mp3',
+                'music/m6.mp3',
+                'music/m7.mp3',
+                'music/m8.mp3'
+            ];
+            // Выбор случайного аудио
+            const randomAudio = audios[Math.floor(Math.random() * audios.length)];
+            const playButton = document.getElementById('play-button');
+            playButton.addEventListener('click', () => {
+                const audioElement = document.getElementById('background-music');
+                
+                audioElement.src = randomAudio
+                audioElement.volume = 0.2;
+                playButton.disabled = true; // Деактивировать кнопку
+                playButton.classList.add('disabled'); // Добавить класс для стилизации
+                audioElement.play().catch(error => {
+                    console.error('Error playing audio:', error);
+                });
+        });
+    </script>
+    <script>
+        window.onload = function() {
+            const audios = [
+                'music/m1.mp3',
+                'music/m2.mp3',
+                'music/m3.mp3',
+                'music/m4.mp3',
+                'music/m5.mp3',
+                'music/m6.mp3',
+                'music/m7.mp3',
+                'music/m8.mp3'
+            ];
+            // Выбор случайного аудио
+            const randomAudio = audios[Math.floor(Math.random() * audios.length)];
+            const audioElement = document.getElementById('background-musicc');
+            
+            audioElement.src = randomAudio
+            audioElement.volume = 0.2;
+            audioElement.play().catch(error => {
+                console.error('Error playing audio:', error);
+            // Массив путей к GIF-файлам
+            const gifs = [
+                'gifs/bg1.gif',
+                'gifs/bg2.gif',
+                'gifs/bg3.gif',
+                'gifs/bg4.gif',
+                'gifs/bg5.gif',
+            ];
+
+            // Выбор случайного GIF
+            const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+
+            // Установка выбранного GIF в качестве фона
+            document.body.style.backgroundImage = `url(${randomGif})`;
+        }
+    </script>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">home</a></li>
+            </ul>
+        </nav>
+
+        <div class="bio">
+            <img src="https://cdn.discordapp.com/avatars/771825925993136148/a_963584b96cfe8b07394f71b4dcb9eee4.gif?size=4096" alt="Profile Picture">
+            <div class="bio-text">
+                <h2>About Me</h2>
+                <p>Hi, I'm skew, a student and programmer from Russia. I do Discord coding and Telegram bots.</p>
+                <p>I spend a lot of my time writing for the web, with most of it being in Python. You can find some of my public projects on my <a href="https://github.com/ida64pro">GitHub</a>, but most are private.</p>
+                <p class="footer">Copyright © 2024 skew</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

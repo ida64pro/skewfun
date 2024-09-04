@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1b3a; /* Темный фиолетовый для основного фона */
+    color: #d4c1f9; /* Светло-фиолетовый текст */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover; /* Растягивание GIF на весь экран */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('car.gif');
+}
+
+.container {
+    width: 60%;
+    background-color: rgba(44, 37, 77, 0.85); /* Полупрозрачный темный фиолетовый для контейнера */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: rgba(62, 51, 112, 0.85); /* Полупрозрачный фиолетовый для фона навигации */
+    border-radius: 5px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d4c1f9; /* Светло-фиолетовый текст ссылок */
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #5e4a96; /* Более светлый фиолетовый для активной ссылки */
+    color: #f9e8ff; /* Очень светлый фиолетовый для текста активной ссылки */
+}
+
+.bio {
+    display: flex;
+    background-color: rgba(44, 37, 77, 0.85); /* Полупрозрачный темный фиолетовый для фона блока bio */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.bio img {
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); /* Тень для выделения изображения */
+}
+
+.bio-text {
+    max-width: 600px;
+}
+
+.bio-text h2 {
+    margin: 0;
+    color: #f9e8ff; /* Очень светлый фиолетовый для заголовков */
+}
+
+.bio-text p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.bio-text .footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #b3a6d1; /* Более темный светло-фиолетовый для подвала */
+}
+
+a {
+    text-decoration: none;
+    color: #0c92eb; /* Цвет ссылок */
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a:focus,
+a:active {
+    outline: none; /* Убирает обводку */
+    color: #f9e8ff; /* Устанавливает нужный цвет текста при нажатии */
+}
+
+a:hover {
+    color: #f9e8ff; /* Цвет текста при наведении */
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .bio {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bio img {
+        margin: 0 0 20px 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.play-button {
+    background: linear-gradient(145deg, #6a4b9a, #3e2a6a); /* Градиент для кнопки */
+    border: none;
+    border-radius: 50px; /* Круглая форма кнопки */
+    color: #fff; /* Цвет текста */
+    font-size: 18px;
+    padding: 15px 30px;
+    cursor: pointer;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
+                -8px -8px 15px rgba(255, 255, 255, 0.3); /* Тени для кнопки */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover {
+    background: linear-gradient(145deg, #7d5b8e, #4e3d73); /* Изменение градиента при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.play-button:active {
+    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
+}
+
+.play-button.disabled {
+    background: #b3a6d1; /* Цвет кнопки, когда она неактивна */
+    cursor: not-allowed; /* Указывает, что действие не разрешено */
+    box-shadow: none; /* Убирает тень, когда кнопка неактивна */
+    transition: none; /* Убирает анимацию при деактивации */
+}
